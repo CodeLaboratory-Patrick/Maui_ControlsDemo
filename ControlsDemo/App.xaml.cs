@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new PresentationControlsDemo();
+            MainPage = new CommandControlsDemo();
         }
     }
 }
