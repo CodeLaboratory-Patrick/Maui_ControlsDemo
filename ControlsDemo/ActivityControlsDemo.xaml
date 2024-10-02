@@ -4,9 +4,7 @@
              x:Class="ControlsDemo.ActivityControlsDemo"
              Title="ActivityControlsDemo">
     <StackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <ActivityIndicator IsRunning="True" Color="Blue"/>
+        <ProgressBar Progress=".5"/>
     </StackLayout>
 </ContentPage>
