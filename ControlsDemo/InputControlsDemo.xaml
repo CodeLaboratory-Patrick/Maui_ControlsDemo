@@ -4,6 +4,27 @@
              x:Class="ControlsDemo.InputControlsDemo"
              Title="InputControlsDemo">
     <StackLayout>
-        
+        <CheckBox IsChecked="True" />
+
+        <Slider x:Name="slider"
+                Minimum="0"
+                Maximum="10"
+                MinimumTrackColor="Yellow"
+                MaximumTrackColor="Green"
+                ThumbColor="DarkRed"
+                ValueChanged="slider_ValueChanged"/>
+        <Label x:Name="lblSlider"/>
+
+        <Stepper x:Name="stepper" 
+                     ValueChanged="stepper_ValueChanged"
+                     Maximum="10"
+                     Minimum="2"
+                     Increment="2"/>
+
+        <Switch IsToggled="True"/>
+
+        <DatePicker />
+        <TimePicker/>
+
     </StackLayout>
 </ContentPage>

@@ -1,3 +1,6 @@
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+
 namespace ControlsDemo;
 
 public partial class InputControlsDemo : ContentPage
@@ -6,4 +9,17 @@ public partial class InputControlsDemo : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void slider_ValueChanged(object sender, ValueChangedEventArgs e)
+	{
+        lblSlider.Text = slider.Value.ToString();
+    }
+
+    private void stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        if (stepper != null)
+        {
+            lblSlider.Text = stepper.Value.ToString();
+        }
+    }
 }
