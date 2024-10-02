@@ -6,7 +6,8 @@
         {
             InitializeComponent();
 
-            MainPage = new CommandControlsDemo();
+            MainPage = new InputControlsDemo();
+();
         }
     }
 }
