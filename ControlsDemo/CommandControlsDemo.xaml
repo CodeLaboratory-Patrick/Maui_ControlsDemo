@@ -4,9 +4,60 @@
              x:Class="ControlsDemo.CommandControlsDemo"
              Title="CommandControlsDemo">
     <StackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+        <Button x:Name="btnTest" Text="Click Me!"
+                Clicked="btnTest_Clicked" />
+
+        <ImageButton Source="dotnet_bot.svg"
+                     Clicked="btnTest_Clicked"/>
+
+        <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                     Content="Option 1"
+                     GroupName="group1" />
+
+        <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                     Content="Option 2"
+                     GroupName="group2" />
+
+        <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                     Content="Option 3"
+                     GroupName="group3" />
+
+        <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                     Content="Option 4"
+                     GroupName="group4" />
+
+        <RadioButton CheckedChanged="RadioButton_CheckedChanged"
+                     Content="Option 5"
+                     GroupName="group5" />
+
+        <SearchBar x:Name="searchControl"
+                   SearchButtonPressed="searchControl_SearchButtonPressed" />
+
+        <SwipeView>
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                    <SwipeItem
+                            BackgroundColor="LightGreen"
+                            IconImageSource="dotnet_bot.svg"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Favorite"/>
+                    <SwipeItem
+                            BackgroundColor="LightPink"
+                            IconImageSource="dotnet_bot.svg"  
+                            Invoked="SwipeItem_Invoked"
+                            Text="Delete"/>
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            
+            <Grid BackgroundColor="LightGray"
+                      HeightRequest="60"
+                      WidthRequest="300">
+                <Label HorizontalOptions="Center"
+                           Text="Swipe Right"
+                           VerticalOptions="Center"/>
+            </Grid>
+        </SwipeView>
+
     </StackLayout>
 </ContentPage>
