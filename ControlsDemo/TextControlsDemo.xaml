@@ -4,9 +4,15 @@
              x:Class="ControlsDemo.TextControlsDemo"
              Title="TextControlsDemo">
     <StackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Entry Placeholder="Name"
+               x:Name="txtName"
+               PlaceholderColor="DarkGreen"
+               IsPassword="True"
+               Keyboard="Telephone"
+               TextChanged="Entry_TextChanged"
+               Completed="Entry_Completed">
+        </Entry>
+
+        <Editor AutoSize="TextChanges"/>
     </StackLayout>
 </ContentPage>
