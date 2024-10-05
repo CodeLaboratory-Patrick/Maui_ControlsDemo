@@ -346,3 +346,99 @@ The **IsPassword** property is used to indicate whether the text input should be
 ## Reference Sites
 - [.NET MAUI Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
 - [Microsoft Learn - Entry](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/entry)
+
+# Editor, ActivityIndicator, and ProgressBar in .NET MAUI
+
+## What is Editor in .NET MAUI?
+
+The **Editor** element in .NET MAUI is a multi-line text input control that allows users to enter and edit larger amounts of text compared to the single-line **Entry** control. It is suitable for scenarios where users need to provide more extensive text input, such as comments, descriptions, or feedback.
+
+### Key Features of Editor
+
+- **Multi-line Text Input**: Unlike the **Entry** control, the **Editor** is designed for **multi-line** input, making it ideal for capturing larger amounts of text.
+- **Text Property**: Represents the content of the Editor, which can be bound to a view model.
+- **TextChanged Event**: Triggers whenever the text changes, allowing developers to handle the input dynamically.
+- **AutoSize Property**: Controls whether the Editor resizes based on the amount of text. The default value is `TextChanges`, which means it automatically adjusts as the user types.
+
+### Example of Editor
+
+```xml
+<StackLayout Padding="10">
+    <Label Text="Enter your comments" FontSize="Medium" />
+    <Editor Placeholder="Write your comments here..." AutoSize="TextChanges" />
+</StackLayout>
+```
+- In this example, the **Editor** allows users to enter multi-line text, such as comments or feedback. The `AutoSize` property ensures that the Editor expands as more text is entered.
+
+### When to Use Editor
+- Use **Editor** when you need users to provide **multi-line text input**, such as filling out **feedback forms**, **writing comments**, or **descriptions**.
+
+## What is ActivityIndicator in .NET MAUI?
+
+The **ActivityIndicator** element in .NET MAUI is a visual indicator that informs users that an operation or task is in progress. It is typically used to enhance the user experience by providing feedback during time-consuming operations, such as loading data or processing actions.
+
+### Key Features of ActivityIndicator
+
+- **IsRunning Property**: Represents whether the ActivityIndicator is currently running. When set to `true`, the indicator is visible and spinning, showing that a task is in progress.
+- **Color Property**: Allows you to set the color of the ActivityIndicator to match the app's theme.
+
+### Example of ActivityIndicator
+
+```xml
+<StackLayout Padding="10">
+    <ActivityIndicator IsRunning="true" Color="Blue" />
+    <Label Text="Loading data, please wait..." />
+</StackLayout>
+```
+- In this example, the **ActivityIndicator** is set to `IsRunning="true"` to indicate that data is currently loading. The **Color** is set to **Blue** to provide a visual cue.
+
+### When to Use ActivityIndicator
+- Use **ActivityIndicator** to indicate that a **process is ongoing** or **data is being loaded**. It is commonly used when retrieving data from an API, during file uploads, or any other **asynchronous operations** that take time.
+
+## What is ProgressBar in .NET MAUI?
+
+The **ProgressBar** element in .NET MAUI provides a way to display progress information to users. Unlike the **ActivityIndicator**, which indicates an indefinite process, the **ProgressBar** represents the **completion percentage** of a specific task.
+
+### Key Features of ProgressBar
+
+- **Progress Property**: A value between `0` and `1` that represents the progress of a task. `0` means no progress, while `1` means the task is complete.
+- **ProgressColor Property**: Sets the color of the progress bar, allowing customization to match the application's visual style.
+- **ProgressTo Method**: Animates the progress bar to a specific value over a specified duration.
+
+### Example of ProgressBar
+
+```xml
+<StackLayout Padding="10">
+    <Label Text="Downloading File..." FontSize="Medium" />
+    <ProgressBar x:Name="fileDownloadProgress" Progress="0.3" ProgressColor="Green" />
+</StackLayout>
+```
+- In this example, the **ProgressBar** is used to show the **file download progress**, with an initial progress of `0.3` (30%). The **ProgressColor** is set to **Green** to indicate successful progress.
+
+### When to Use ProgressBar
+- Use **ProgressBar** when you need to **show progress** toward the completion of a specific task, such as **file downloads**, **form submission progress**, or **installation processes**.
+
+## Example Combining Editor, ActivityIndicator, and ProgressBar
+
+```xml
+<StackLayout Padding="20">
+    <Label Text="Submit Your Feedback" FontSize="Large" />
+    <Editor Placeholder="Enter your feedback here..." AutoSize="TextChanges" />
+    <ActivityIndicator IsRunning="true" Color="Red" />
+    <ProgressBar Progress="0.5" ProgressColor="Blue" />
+</StackLayout>
+```
+- **Editor**: Allows the user to enter feedback with auto-sizing enabled.
+- **ActivityIndicator**: Indicates that the feedback is being processed (e.g., uploaded to a server).
+- **ProgressBar**: Shows that the feedback submission process is **50% complete**.
+
+## Summary
+- **Editor**: A multi-line text input control, ideal for **comments**, **feedback**, or **descriptions**.
+- **ActivityIndicator**: Displays an animation to indicate that a **process is ongoing**, enhancing the user experience during **loading** or **data processing**.
+- **ProgressBar**: Provides a visual representation of the **completion status** of a task, suitable for **file downloads** or **upload progress**.
+
+## Reference Sites
+- [.NET MAUI Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
+- [Microsoft Learn - Editor](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/editor)
+- [Microsoft Learn - ActivityIndicator](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/activityindicator)
+- [Microsoft Learn - ProgressBar](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/progressbar)
