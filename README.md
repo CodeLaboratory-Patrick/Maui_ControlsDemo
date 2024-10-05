@@ -1256,6 +1256,159 @@ private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 - [Microsoft Learn - TableView](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/tableview)
 - [Microsoft Learn - Cells](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/cells)
 
+# TableView Intent in .NET MAUI: Form, Data, Menu, Settings
+
+## What is TableView Intent in .NET MAUI?
+
+In .NET MAUI, the **TableView** control can be used to display data in a structured, tabular layout. The **Intent** property of **TableView** is used to indicate the purpose or context of the **TableView** to both developers and the platform, allowing for more intuitive presentation and consistent use. The **Intent** property helps in visually distinguishing the type of data and interaction users can expect within the **TableView**. There are four common values for **TableView Intent**: **Form**, **Data**, **Menu**, and **Settings**.
+
+### TableView Intent Options
+
+- **Form**: Used for capturing user input in a structured manner.
+- **Data**: Used for presenting raw or non-editable data.
+- **Menu**: Represents navigational options or commands.
+- **Settings**: Used for displaying and configuring application settings.
+
+### Example of TableView with Different Intents
+
+```xml
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppDemo.TableViewIntentPage">
+    <StackLayout Padding="10">
+        <!-- Form Intent -->
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="User Information">
+                    <EntryCell Label="Name" Placeholder="Enter your name" />
+                    <EntryCell Label="Email" Placeholder="Enter your email" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <!-- Data Intent -->
+        <TableView Intent="Data">
+            <TableRoot>
+                <TableSection Title="Statistics">
+                    <TextCell Text="Total Sales" Detail="$1,234" />
+                    <TextCell Text="Total Users" Detail="567" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <!-- Menu Intent -->
+        <TableView Intent="Menu">
+            <TableRoot>
+                <TableSection Title="Navigation">
+                    <TextCell Text="Home" />
+                    <TextCell Text="Profile" />
+                    <TextCell Text="Settings" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <!-- Settings Intent -->
+        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Preferences">
+                    <SwitchCell Text="Enable Notifications" On="true" />
+                    <SwitchCell Text="Dark Mode" On="false" />
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>
+```
+- The above example showcases **TableView** with each of the different **Intent** values, demonstrating their intended use.
+
+## Detailed Explanation of TableView Intent Options
+
+### Intent="Form"
+- The **Form** intent is used when the **TableView** is meant to capture **user input**. This could include forms where the user needs to enter data, such as name, email, or other information. It usually contains **EntryCells** for input fields.
+- The visual styling often includes elements that make it clear users are expected to enter information.
+
+#### Example of Form Intent
+```xml
+<TableView Intent="Form">
+    <TableRoot>
+        <TableSection Title="Contact Information">
+            <EntryCell Label="Phone" Placeholder="Enter your phone number" />
+            <EntryCell Label="Address" Placeholder="Enter your address" />
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+- In this example, **EntryCells** are used to collect contact information such as **phone number** and **address**.
+
+### Intent="Data"
+- The **Data** intent is used to **display non-editable information**. It’s ideal for showing statistics, summaries, or any data that does not require user input.
+- The content is often read-only, and **TextCells** are commonly used to display key-value pairs.
+
+#### Example of Data Intent
+```xml
+<TableView Intent="Data">
+    <TableRoot>
+        <TableSection Title="Performance">
+            <TextCell Text="Completion Rate" Detail="85%" />
+            <TextCell Text="Total Revenue" Detail="$3,450" />
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+- **TextCells** are used to show performance metrics such as **completion rate** and **total revenue**.
+
+### Intent="Menu"
+- The **Menu** intent is used when the **TableView** serves as a **navigational menu**. It presents different commands or options to the user, which can be clicked to navigate within the application.
+- **TextCells** are generally used for menu options, providing a clean, simple way to list different pages or features.
+
+#### Example of Menu Intent
+```xml
+<TableView Intent="Menu">
+    <TableRoot>
+        <TableSection Title="Main Menu">
+            <TextCell Text="Dashboard" />
+            <TextCell Text="Settings" />
+            <TextCell Text="Log Out" />
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+- The **Menu** intent lists clickable options for **Dashboard**, **Settings**, and **Log Out**.
+
+### Intent="Settings"
+- The **Settings** intent is used for **configuring application settings**. It allows users to toggle or set specific preferences, often containing **SwitchCells** to enable or disable options.
+- It’s suitable for creating settings pages where the user can configure features such as notifications or appearance.
+
+#### Example of Settings Intent
+```xml
+<TableView Intent="Settings">
+    <TableRoot>
+        <TableSection Title="Application Preferences">
+            <SwitchCell Text="Auto-Update" On="true" />
+            <SwitchCell Text="Location Access" On="false" />
+        </TableSection>
+    </TableRoot>
+</TableView>
+```
+- In this example, **SwitchCells** are used for toggling settings like **Auto-Update** and **Location Access**.
+
+## When to Use Each TableView Intent
+- **Form**: Use the **Form** intent when building **input forms** where users need to provide information, such as **registration forms**, **feedback forms**, or **profile updates**.
+- **Data**: Use the **Data** intent when displaying **read-only information**, such as **reports**, **summary data**, or **user stats**.
+- **Menu**: Use the **Menu** intent for creating **navigational menus** or command lists. It works well for **main menus** or **feature navigation**.
+- **Settings**: Use the **Settings** intent for **configurable preferences**. This is ideal for building **settings pages** where users can manage **app features**, **preferences**, and **toggles**.
+
+## Summary
+- **TableView Intent**: Defines the purpose of a **TableView** and affects how it’s visually presented and used.
+  - **Form**: For collecting **user input** with fields such as **EntryCells**.
+  - **Data**: For displaying **read-only information** using **TextCells**.
+  - **Menu**: For providing **navigational options** using **TextCells**.
+  - **Settings**: For allowing users to **configure app settings** using **SwitchCells** and other interactive elements.
+
+## Reference Sites
+- [.NET MAUI Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
+- [Microsoft Learn - TableView](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/tableview)
+
 # Comparison of CarouselView, ListView, CollectionView, Picker, and TableView in .NET MAUI
 
 | Control       | Description                                                                 | Key Features                                                      | Use Cases                                     |
