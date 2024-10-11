@@ -1254,7 +1254,7 @@ private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 ## Reference Sites
 - [.NET MAUI Documentation](https://learn.microsoft.com/en-us/dotnet/maui/)
 - [Microsoft Learn - TableView](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/tableview)
-- [Microsoft Learn - Cells](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/cells)
+- [Microsoft Learn - Cells](https://learn.microsoft.com/en-us/dotnet/api/microsoft.maui.controls.cell?view=net-maui-8.0)
 
 # TableView Intent in .NET MAUI: Form, Data, Menu, Settings
 
